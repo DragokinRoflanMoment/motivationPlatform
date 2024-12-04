@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мотивационные игры</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #34495e;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 5;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .profile:hover {
+      background-color: #4CAF50;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: transform 0.3s;
+    }
+    .profile:hover img {
+      transform: scale(1.1);
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100vh;
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1em 0;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      transition: width 0.3s ease;
+    }
+    .sidebar:hover {
+      width: 250px;
+    }
+    .sidebar-logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    .sidebar:hover .sidebar-logo img {
+      width: 100px;
+      height: 100px;
+    }
+    .sidebar-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .sidebar-nav a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 0;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: font-size 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+    .sidebar:hover .sidebar-nav a {
+      font-size: 1.1em;
+    }
+    .sidebar-nav a:hover {
+      background-color: #34495e;
+      color: #1abc9c;
+    }
+    .support-link {
+      margin-top: auto;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .sidebar:hover .support-link {
+      opacity: 1;
+    }
+    .main-content {
+      margin-left: 80px;
+      margin-top: 50px;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+    }
+    .sidebar:hover ~ .main-content {
+      margin-left: 250px;
+    }
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .game-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+    .game-card img {
+      width: 100%;
+      height: auto;
+    }
+    .game-card .description {
+      padding: 10px;
+      font-size: 0.9em;
+      color: #555;
+    }
+    header {
+      text-align: center;
+      padding: 1em;
+      background-color: #4CAF50;
+      color: white;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Верхний отступ -->
+  <div class="top-bar">
+    <div class="profile" onclick="window.location.href='profile.html'">
+      <img src="https://via.placeholder.com/40" alt="Аватарка">
+      <span style="color: white;">Ваш профиль</span>
+    </div>
+  </div>
+
+  <!-- Боковая панель -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <a href="index.html">
+        <img src="images/tusur.png" alt="Логотип">
+      </a>
+    </div>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="tasks.html">Мотивационные задания</a></li>
+        <li><a href="games.html">Мотивационные игры</a></li>
+        <li><a href="community.html">Сообщества</a></li>
+      </ul>
+    </nav>
+    <div class="support-link">
+      <a href="support.html" class="btn btn-outline-light">Техподдержка</a>
+    </div>
+  </aside>
+
+  <!-- Основное содержимое -->
+  <div class="main-content">
+    <header>
+      <h1>Мотивационные игры</h1>
+    </header>
+    <p>Игры, которые помогут вам зарядиться мотивацией и вдохновением!</p>
+    <div class="game-grid">
+      <div class="game-card">
+        <img src="images/forest.png" alt="Игра 1">
+        <div class="description">
+          <strong>Forest</strong>
+          <p>Посадите своё виртуальное дерево и следите за его ростом, пока концентрируетесь на задачах. Будьте осторожны, дереву нужна вода! Успешное выполнение задач позволит вырастить дерево, которое станет визуальной метафорой ваших достигнутых целей.</p>
+        </div>
+      </div>
+      <div class="game-card">
+        <img src="images/30days.png" alt="Игра 2">
+        <div class="description">
+          <strong>За 30 дней к Успеху</strong>
+          <p>Поставьте себе цель, которая разобьется на ежедневные микро-задачи. Каждый день выполняйте одно задание, приближая себя к успеху! Выполнение полного цикла (30 дней) не только позволит вам выполнить даже самую сложную задачу, но и бонусом начислит вам уникальное достижение!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
